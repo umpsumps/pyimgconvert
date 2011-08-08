@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser(description='Python/Bash imageMagick resizer')
 
 parser.add_argument('-photo', action='store', dest='photo', type=str, help='Input photo name')
 parser.add_argument('-format', action="store", dest='format', default='prof', help='Choose a a file format, prof, home, bullet, etc..')
-parser.add_argument('-id', action='store', dest='idnumber', type=str, help='Doctor ID number')
+parser.add_argument('-id', action='store', dest='idnumber', type=str, help='Player ID number')
 parser.add_argument('-width', action="store", dest="width", default='165', type=int)
 
 arg_values = parser.parse_args()
@@ -51,7 +51,7 @@ def resizePicture(width, inputfile, outputfile):
 	print "Job Done."
 
 def publishPhoto(outputfile, target_dir):
-	#check and see if doctor already has a directory created
+	#check and see if Player already has a directory created
 	if os.path.exists(target_dir):
 		print "Directory %s found!" % (outputfile)
 		print "Copying photo to %s/%s" % (target_dir, outputfile)
